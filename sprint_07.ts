@@ -51,7 +51,10 @@ enum Data_04 {
   Hex,
 }
 
-const f04 = (): void => {};
+const f04 = (): void => {
+  let arr = Object.keys(Data_04);
+  document.querySelector(".out-4").textContent = String(arr.join(" "));
+};
 
 document.querySelector(".b-4").addEventListener("click", f04);
 
@@ -64,9 +67,15 @@ enum Wolves {
   "Teleportation" = 2,
   "Bite" = 10,
 }
-
+console.log(Wolves);
 const f05 = () => {
-  return;
+  let arr = Object.keys(Wolves);
+  arr = arr.filter((el) => {
+    if (isNaN(Number(el))) {
+      return el;
+    }
+  });
+  return arr;
 };
 
 document.querySelector(".b-5").addEventListener("click", (): void => {

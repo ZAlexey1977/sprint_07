@@ -45,7 +45,10 @@ var Data_04;
     Data_04[Data_04["Valorie"] = 2] = "Valorie";
     Data_04[Data_04["Hex"] = 3] = "Hex";
 })(Data_04 || (Data_04 = {}));
-const f04 = () => { };
+const f04 = () => {
+    let arr = Object.keys(Data_04);
+    document.querySelector(".out-4").textContent = String(arr.join(" "));
+};
 document.querySelector(".b-4").addEventListener("click", f04);
 // Task 05
 // Создан enum Wolves. Напишите функцию f05, которая возвращает текстовые характеристики волка в виде массива.
@@ -56,8 +59,15 @@ var Wolves;
     Wolves[Wolves["Teleportation"] = 2] = "Teleportation";
     Wolves[Wolves["Bite"] = 10] = "Bite";
 })(Wolves || (Wolves = {}));
+console.log(Wolves);
 const f05 = () => {
-    return;
+    let arr = Object.keys(Wolves);
+    arr = arr.filter((el) => {
+        if (isNaN(Number(el))) {
+            return el;
+        }
+    });
+    return arr;
 };
 document.querySelector(".b-5").addEventListener("click", () => {
     console.log(f05());
