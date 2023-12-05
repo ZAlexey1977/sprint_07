@@ -81,7 +81,11 @@ var TrafficLight;
     TrafficLight["Red"] = "R";
 })(TrafficLight || (TrafficLight = {}));
 const f06 = () => {
-    return;
+    let arr = [];
+    for (let key in TrafficLight) {
+        arr.push(TrafficLight[key]);
+    }
+    return arr;
 };
 document.querySelector(".b-6").addEventListener("click", () => {
     console.log(f06());
@@ -89,9 +93,25 @@ document.querySelector(".b-6").addEventListener("click", () => {
 // Task 07
 // Создайте enum с названием TsTypes, где перечисляются типы данных: number, string, boolean и им соответствуют сокращения num, str, bool.
 // Выведите в консоль.
+var TsTypes;
+(function (TsTypes) {
+    TsTypes["number"] = "num";
+    TsTypes["string"] = "str";
+    TsTypes["boolean"] = "bool";
+})(TsTypes || (TsTypes = {}));
+console.log(TsTypes);
 // Task 08
 // Создайте enum Time которая содержит перечисление hr, min, sec, AM, PM и соответствующее им значения hour, minute, second,
 // Ante Meridiem, Post Meridiem. Выведите в консоль.
+var Time;
+(function (Time) {
+    Time["hr"] = "hour";
+    Time["min"] = "minute";
+    Time["sec"] = "second";
+    Time["AM"] = "Ante Meridiem";
+    Time["PM"] = "Post Meridiem";
+})(Time || (Time = {}));
+console.log(Time);
 // Task 09
 // Создайте функцию, которая принимает аргумент типа TsTypes, и возвращает, если number - число 1,
 //

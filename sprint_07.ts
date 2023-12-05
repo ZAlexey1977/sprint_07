@@ -92,7 +92,11 @@ enum TrafficLight {
 }
 
 const f06 = (): string[] => {
-  return;
+  let arr: string[] = [];
+  for (let key in TrafficLight) {
+    arr.push(TrafficLight[key]);
+  }
+  return arr;
 };
 
 document.querySelector(".b-6").addEventListener("click", (): void => {
@@ -103,9 +107,25 @@ document.querySelector(".b-6").addEventListener("click", (): void => {
 // Создайте enum с названием TsTypes, где перечисляются типы данных: number, string, boolean и им соответствуют сокращения num, str, bool.
 // Выведите в консоль.
 
+enum TsTypes {
+  number = "num",
+  string = "str",
+  boolean = "bool",
+}
+console.log(TsTypes);
+
 // Task 08
 // Создайте enum Time которая содержит перечисление hr, min, sec, AM, PM и соответствующее им значения hour, minute, second,
 // Ante Meridiem, Post Meridiem. Выведите в консоль.
+
+enum Time {
+  hr = "hour",
+  min = "minute",
+  sec = "second",
+  AM = "Ante Meridiem",
+  PM = "Post Meridiem",
+}
+console.log(Time);
 
 // Task 09
 // Создайте функцию, которая принимает аргумент типа TsTypes, и возвращает, если number - число 1,
