@@ -117,17 +117,41 @@ console.log(Time);
 //
 // если string то строку '1', если boolean то true. Тип данных функции укажите самостоятельно.
 // enum TsTypes
-const f09 = () => { };
-// document.querySelector('.b-9').addEventListener('click', ():void=> {
-//     console.log( f09(TsTypes.boolean));
-// });
+const f09 = (str) => {
+    let out = "";
+    for (let key in TsTypes) {
+        if (str == TsTypes[key]) {
+            out = 1;
+        }
+        if (str == TsTypes[key]) {
+            out = "1";
+        }
+        if (str == TsTypes[key]) {
+            out = true;
+        }
+    }
+    return out;
+};
+document.querySelector(".b-9").addEventListener("click", () => {
+    console.log(f09(TsTypes.boolean));
+});
 // Task 10
 // Создайте enum Roles, содержащий ключи admin со значением 1, writer со значением 5, и user со значением 10.
 // Напишите функцию f10, которая может принимать аргумент - тип Roles и если переданная роль admin или writer
 // то возвращает true, в противном случае - false.
-// enum Roles
-// const f10 =
-// document.querySelector('.b-10').addEventListener('click', ():void=> {
-//    console.log(f10(Roles.writer));
-// });
+var Roles;
+(function (Roles) {
+    Roles[Roles["admin"] = 1] = "admin";
+    Roles[Roles["writer"] = 5] = "writer";
+    Roles[Roles["user"] = 10] = "user";
+})(Roles || (Roles = {}));
+const f10 = (action) => {
+    if (action == 1 || action == 5) {
+        return true;
+    }
+    return false;
+};
+document.querySelector(".b-10").addEventListener("click", () => {
+    console.log(f10(Roles.writer));
+});
 //# sourceMappingURL=sprint_07.js.map

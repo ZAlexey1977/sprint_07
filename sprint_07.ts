@@ -134,21 +134,45 @@ console.log(Time);
 
 // enum TsTypes
 
-const f09 = () => {};
+const f09 = (str): number | string | boolean => {
+  let out: number | string | boolean = "";
 
-// document.querySelector('.b-9').addEventListener('click', ():void=> {
-//     console.log( f09(TsTypes.boolean));
-// });
+  for (let key in TsTypes) {
+    if (str == TsTypes[key]) {
+      out = 1;
+    }
+    if (str == TsTypes[key]) {
+      out = "1";
+    }
+    if (str == TsTypes[key]) {
+      out = true;
+    }
+  }
+  return out;
+};
+
+document.querySelector(".b-9").addEventListener("click", (): void => {
+  console.log(f09(TsTypes.boolean));
+});
 
 // Task 10
 // Создайте enum Roles, содержащий ключи admin со значением 1, writer со значением 5, и user со значением 10.
 // Напишите функцию f10, которая может принимать аргумент - тип Roles и если переданная роль admin или writer
 // то возвращает true, в противном случае - false.
 
-// enum Roles
+enum Roles {
+  admin = 1,
+  writer = 5,
+  user = 10,
+}
 
-// const f10 =
+const f10 = (action: Roles) => {
+  if (action == 1 || action == 5) {
+    return true;
+  }
+  return false;
+};
 
-// document.querySelector('.b-10').addEventListener('click', ():void=> {
-//    console.log(f10(Roles.writer));
-// });
+document.querySelector(".b-10").addEventListener("click", (): void => {
+  console.log(f10(Roles.writer));
+});
